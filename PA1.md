@@ -85,6 +85,7 @@ apply(is.na(dat1), 2,sum )
 dat1_imputed <- dat1
 
 # Filling in all of the missing values in the dataset
+# Here I use the average of that 5-min interval
 for ( i in 1:nrow(dat1_imputed)) {
     if (is.na(dat1_imputed$steps[i])){
         which_row <- which(dat1_daily_pattern$interval==dat1_imputed$interval[i])
@@ -114,8 +115,9 @@ mean_imputed <- round(mean(dat1_imputed_sum_by_day$sum),0)
 median_imputed <- median(dat1_imputed_sum_by_day$sum)
 ```
 
-The total number of missing values in the dataset is 2304. Mean total
-number of steps taken per day is 10766.  
+The total number of missing values in the dataset is 2304. The average
+of same 5-min interval is used for imputation.  
+Mean total number of steps taken per day is 10766.  
 Median total number of steps taken per day is 10765.
 
 # Q5: Are there differences in activity patterns between weekdays and weekends?
