@@ -1,8 +1,8 @@
 ---
 title: "Reproducible Research: Peer Assessment 1"
 output: 
-  html_document: default
-  github_document: default
+  html_document:
+    keep_md: true
 
 
 ---
@@ -92,7 +92,7 @@ mean_imputed <- round(mean(dat1_imputed_sum_by_day$sum),0)
 median_imputed <- median(dat1_imputed_sum_by_day$sum)
 
 ```
-The total number of missing values in the dataset is 2304. The average of same 5-min interval is used for imputation.  
+The total number of missing values in the dataset is 2304. The average of same 5-min interval is used for imputation. From the results, nothing is changed.  
 Mean total number of steps taken per day is `r mean_imputed`.  
 Median total number of steps taken per day is `r median_imputed`.
 
